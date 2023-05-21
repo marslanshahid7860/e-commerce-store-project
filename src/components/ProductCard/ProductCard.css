@@ -1,0 +1,34 @@
+/* ProductCard.css */
+
+.product_list_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.product_list_wrapper img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-detail span {
+  margin-bottom: 5px;
+}
+
+.price {
+  font-weight: bold;
+}
+
