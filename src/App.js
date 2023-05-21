@@ -11,11 +11,11 @@ function App() {
   return (
     <React.Fragment>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Shop" element={<Shop />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Cart" element={<Cart />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/Shop" element={<Shop />} />
+        <Route exact path="/About" element={<About />} />
+        <Route exact path="/Contact" element={<Contact />} />
+        <Route exact path="/Cart" element={<Cart />} />
       </Routes>
     </React.Fragment>
   );

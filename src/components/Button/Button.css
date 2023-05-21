@@ -1,12 +1,12 @@
 .btn {
   background-color: transparent;
-  border:2px solid #fff;
-  color:#fff;
+  border: 2px solid #fff;
+  color: #fff;
   font-size: 12px;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 2px;
-  padding:12px 24px;
+  padding: 12px 24px;
 }
 .btn:hover {
   background-color: #fff;
