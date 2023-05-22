@@ -4,7 +4,7 @@ import "./Button.css";
 export const Button = ({ title }) => {
   return (
     <React.Fragment>
-      <button className="btn btn-dark">{title}</button>
+      <button className="btn btn-light">{title}</button>
       
     </React.Fragment>
   );

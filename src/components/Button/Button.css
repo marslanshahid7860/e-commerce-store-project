@@ -1,16 +1,23 @@
 .btn {
-  padding:12px 24px;
+  padding: 12px 24px;
   border-radius: 3px;
   background-color: #ffb700;
   text-transform: uppercase;
-  border:none;
-  color:#222;
+  border: none;
+  color: #222;
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
 }
+
 .btn:hover {
-  background: transparent;
-  color:#222;
+  background-color: transparent;
+  color: #222;
   border: 1px solid #222;
+}
+
+.btn.btn-light:hover {
+  border: 1px solid #ffb700;
+  color: #ffb700;
+  background-color: transparent;
 }
