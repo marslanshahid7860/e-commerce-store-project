@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
+import "./ProductList.css";
 
 export const ProductList = () => {
   const [myData, setMyData] = useState([]);
@@ -24,23 +25,14 @@ export const ProductList = () => {
     return <p>{error}</p>;
   }
 
+  // Filter the data to get the first four and last four items
+  const filteredData = [...myData.slice(0, 4), ...myData.slice(-4)];
+
   return (
-    // <div>
-    //   {myData.map((product) => {
-    //     const { id, title, price } = product;
-    //     return (
-    //       <React.Fragment key={id}>
-    //         <h2>{title}</h2>
-    //         <p>{price}</p>
-    //       </React.Fragment>
-    //     );
-    //   })}
-    // </div>
-    <Container fluid>
-      <Row className="product-title">
-        {myData.map((product) => (
-          
-          <Col xl={3} lg={4} md={6} sm={6} xs={12}>
+    <Container>
+      <Row className="product-item">
+        {filteredData.map((product) => (
+          <Col xl={3} lg={4} md={6} sm={6} xs={12} key={product.id}>
             <div className="card-item">
               <ProductCard product={product} />
             </div>

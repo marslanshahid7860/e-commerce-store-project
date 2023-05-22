@@ -1,15 +1,16 @@
 .btn {
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  font-size: 12px;
+  padding:12px 24px;
+  border-radius: 3px;
+  background-color: #ffb700;
   text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  padding: 12px 24px;
+  border:none;
+  color:#222;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
 }
 .btn:hover {
-  background-color: #fff;
-  border: 2px solid #fff;
-  color: #000;
+  background: transparent;
+  color:#222;
+  border: 1px solid #222;
 }
