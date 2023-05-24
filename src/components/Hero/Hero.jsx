@@ -6,7 +6,7 @@ import "./Hero.css";
 
 export const Hero = () => {
   return (
-    <Container className="hero">
+    <Container fluid className="hero">
       <Row>
         <Col xl={12}>
           <div className="hero-container">
