@@ -56,7 +56,8 @@ button {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    display: flex;
+    opacity: 0;
   }
   .nav-links-mobile {
     position: absolute;
@@ -64,11 +65,11 @@ button {
     flex-direction: column;
     background: #222831;
     list-style: none;
-    box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
     left: 0;
     top: 10%;
     width: 100%;
-    transition: all 0.5s ease-in-out; /* Transition the opacity property */
+    animation: slideLeft 0.5s forwards;
+    /* transition: all 0.5s ease-in-out; Transition the opacity property */
   }
   ul li {
     font-family: "Times New Roman", Times, serif;
@@ -76,10 +77,10 @@ button {
     list-style: none;
     font-size: 30px;
     color: #f2f2f2;
-    padding: 32px;
+    padding: 10px;
     width: 100%;
     text-align: center;
-    transition: all 0.5s ease-in-out; /* Transition the opacity property */
+    /* transition: all 0.5s ease-in-out; Transition the opacity property */
   }
   .mobile-menu-icon {
     position: absolute;
@@ -90,5 +91,13 @@ button {
     background-color: #f96d00;
     border-radius: 5px;
     max-height: 25px;
+  }
+  @keyframes slideLeft {
+    from {
+      left: 100%; /* Start offscreen to the right */
+    }
+    to {
+      left: 0; /* Slide to the left */
+    }
   }
 }
