@@ -6,7 +6,8 @@ import Shop from "./pages/Shop";
 import Contact from "./pages/Contact/Contact";
 import Cart from "./pages/Cart";
 import { Navbar } from "./components/Navbar/Navbar";
-import './App.css';
+import ProductDetail from './pages/ProductDetail/ProductDetail';
+import "./App.css";
 
 function App() {
   return (
@@ -14,10 +15,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/Shop" element={<Shop />} />
-        <Route exact path="/About" element={<About />} />
-        <Route exact path="/Contact" element={<Contact />} />
-        <Route exact path="/Cart" element={<Cart />} />
+        <Route exact path="/shop" element={<Shop />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/cart" element={<Cart />} />
+        <Route exact path="product/:id" element={<ProductDetail />} />
       </Routes>
     </React.Fragment>
   );

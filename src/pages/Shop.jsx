@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {Container, Row, Col} from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { getProducts } from "../Api";
 import { ProductCard } from "../components/ProductCard/ProductCard";
+import "./../App.css";
 
 function Shop() {
   const [myData, setMyData] = useState([]);
@@ -23,9 +24,6 @@ function Shop() {
   if (error) {
     return <p>{error}</p>;
   }
-
-  // Filter the data to get the first four and last four items
-  // const filteredData = [...myData.slice(0, 4), ...myData.slice(-4)];
 
   return (
     <Container>
