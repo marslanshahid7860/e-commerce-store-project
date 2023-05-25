@@ -1,82 +1,58 @@
 .hero-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   width: 100%;
   height: 50vh;
 }
 
 .hero {
-  margin-top: 20px;
   margin: 0;
   padding:0;
-  overflow-x: hidden;
+  overflow: hidden;
 }
-
-.hero-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: -1;
-}
-
 .hero-container {
   background-image: url("./../../assets/images/about.jpg");
   background-repeat: no-repeat;
   background-position: center top left;
   background-size: cover;
   width: 100%;
-  z-index: -2;
+}
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 2rem;
-  max-width: 600px;
-  width: 100%;
+  z-index: 3;
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .hero-content h1 {
   font-size: 2.6rem;
-  font-weight: 400;
-  color: #fff;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .hero-content p {
   font-size: 16px;
-  color: white;
   font-weight: 300;
   margin-bottom: 1rem !important;
+  text-align: center;
 }
 
 .subtitle {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   color: #ffb700;
-  text-transform: uppercase;
-}
-
-.hero-content .btn {
-  padding: 12px 24px;
-  border-radius: 3px;
-  background-color: #ffb700;
-  text-transform: uppercase;
-  border: none;
-  color: #222;
-  font-size: 14px;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-.hero-content .btn:hover {
-  background: transparent;
-  color: #222;
-  border: 1px solid #222;
 }

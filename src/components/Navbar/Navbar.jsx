@@ -1,38 +1,23 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
-import {GiHamburgerMenu} from "react-icons/gi"
-import {VscChromeClose} from "react-icons/vsc"
 
-
-
-const Navbar = () => {
-
-const [mobile, setMobile] = useState(false)
-
-
+export const Navbar = () => {
   return (
-    <>
-  <nav className="nav-bar">
-    
-
-    <h3 className='logo'>Binco</h3>
-    <ul className={mobile? 'nav-links-mobile': "nav-links"} onClick={()=>setMobile
-    (false)}>
-      <Link to="/"><li>Home</li></Link>
-      <Link to="/About"><li>About</li></Link>
-      <Link to="/Contact"><li>Contact</li></Link>
-      <Link to="/Cart"><li>Cart</li></Link>
-      <Link to="/Shop"><li>Shop</li></Link>
-    </ul>
-    <button className='mobile-menu-icon' onClick={() => setMobile
-    (!mobile)}>
-      {mobile? <VscChromeClose/> : <GiHamburgerMenu/> }
-      
-    </button>
-    
-  </nav>
-</>
-)};
-
-export default Navbar;
+    <nav className="navbar">
+      <Container>
+        <Link to="/" className="logo">
+          Store
+        </Link>
+        <ul className="navbar-nav">
+          <Link to="/" className="menu-link">Home</Link>
+          <Link to="/shop" className="menu-link">Shop</Link>
+          <Link to="/about" className="menu-link">About</Link>
+          <Link to="/contact" className="menu-link">Contact</Link>
+          <Link to="/cart" className="menu-link">Cart</Link>
+        </ul>
+      </Container>
+    </nav>
+  );
+};
