@@ -1,13 +1,14 @@
-import React from 'react';
-import { Routes ,Route } from 'react-router-dom';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Contact from "./pages/Contact/Contact";
-import Cart from "./pages/Cart";
+import Cart from "./pages/Cart/Cart";
 import { Navbar } from "./components/Navbar/Navbar";
-import ProductDetail from './pages/ProductDetail/ProductDetail';
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="product/:id" element={<ProductDetail />} />
       </Routes>
+      <Footer />
     </React.Fragment>
   );
 }

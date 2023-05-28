@@ -1,11 +1,10 @@
 import React from "react";
 import "./Button.css";
 
-export const Button = ({ title }) => {
+export const Button = ({ title, onClick, className }) => {
   return (
-    <React.Fragment>
-      <button className="btn btn-light">{title}</button>
-      
-    </React.Fragment>
+    <button className={`btn ${className}`} onClick={onClick}>
+      {title}
+    </button>
   );
 };

@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #232323;
   color: #fff;
   padding: 16px;
   display: flex;
@@ -26,6 +26,7 @@
   list-style: none;
   flex-direction: row;
   gap:20px;
+  position: relative;
 }
 
 .menu-link {
@@ -38,4 +39,13 @@
 .menu-link:hover {
   color: #ffb700;
 }
-
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 0 3px;
+}

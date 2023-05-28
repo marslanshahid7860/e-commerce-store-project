@@ -12,7 +12,7 @@ export const ProductCard = ({ product }) => {
           <span className="category">{product.category}</span>
           <span className="price">${product.price}</span>
           <Link to={`/product/${product.id}`}>
-            <Button title={"View Details"} className={"btn"} />
+            <Button title={"View Details"} className={"btn btn-custom"} />
           </Link>
         </div>
       </div>

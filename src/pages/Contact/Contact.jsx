@@ -55,7 +55,7 @@ function Contact() {
                 </div>
                 <Button
                   title={"Send"}
-                  className={"btn btn-light"}
+                  className={"btn btn-custom"}
                   type="button"
                   name="button"
                 />

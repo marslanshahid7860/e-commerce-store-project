@@ -9,11 +9,21 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+     text-transform: capitalize;
 }
-.product-details .product-price{
+.product-details .value{
     font-size: 16px;
     font-weight:500;
     color:#333;
+    position: relative;
+    top:5px;
+}
+.product-details .price {
+    border-bottom: 1px solid #808080;
+    padding-bottom: 5px;
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 18px;
 }
 .product-description {
     color: #808080;
@@ -27,4 +37,20 @@
     color: #ffb700;
     font-weight: 600;
     font-size: 16px;
+}
+.product-title {
+    font-size:20px;
+    color:#333;
+    font-weight:500;
+}
+.product-category {
+    color:#808080;
+    font-size:14px;
+    font-weight: 600;
+    line-height: 0;
+}
+.button-container {
+    display: flex;
+    gap:20px;
+    margin-top: 10px;
 }
