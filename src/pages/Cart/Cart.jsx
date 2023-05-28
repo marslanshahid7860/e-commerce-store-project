@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {Button} from "../../components/Button/Button"
 import "./Cart.css";
 
 function Cart() {
+  const navigate = useNavigate();
   const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
   const [quantities, setQuantities] = useState({});
@@ -18,34 +19,30 @@ function Cart() {
     localStorage.setItem("cart", JSON.stringify(updatedCartItems));
   }, [quantities, cartItems]);
 
-  const handleIncrement = (itemId) => {
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [itemId]: (prevQuantities[itemId] || 1) + 1,
-    }));
+  const handleIncrement = (id) => {
+    const updatedQuantities = { ...quantities };
+    updatedQuantities[id] = (updatedQuantities[id] || 1) + 1;
+    setQuantities(updatedQuantities);
   };
 
-  const handleDecrement = (itemId) => {
-    setQuantities((prevQuantities) => {
-      const prevQuantity = prevQuantities[itemId] || 1;
-      if (prevQuantity > 1) {
-        return {
-          ...prevQuantities,
-          [itemId]: prevQuantity - 1,
-        };
-      }
-      return prevQuantities;
-    });
+  const handleDecrement = (id) => {
+    const updatedQuantities = { ...quantities };
+    if (updatedQuantities[id] > 1) {
+      updatedQuantities[id] = updatedQuantities[id] - 1;
+      setQuantities(updatedQuantities);
+    }
   };
 
   const handleRemove = (itemId) => {
     const updatedCartItems = cartItems.filter(
       (cartItem) => cartItem.product.id !== itemId
     );
-    const updatedQuantities = { ...quantities };
-    delete updatedQuantities[itemId];
-    setQuantities(updatedQuantities);
     localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+    navigate('/cart')
+    // const updatedQuantities = { ...quantities };
+    // delete updatedQuantities[itemId];
+    // setQuantities(updatedQuantities);
+    // localStorage.setItem("cart", JSON.stringify(updatedCartItems));
   };
 
   const getTotalPrice = (item) => {

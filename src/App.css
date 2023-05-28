@@ -1,0 +1,16 @@
+.filter-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-shop {
+  margin: 30px auto;
+}
+

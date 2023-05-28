@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import "./Navbar.css";
 
 export const Navbar = () => {
-  // Fetch the cart items from localStorage
-  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  const [cartCount, setCartCount] = useState(0);
 
-  // Check if there are any items in the cart
-  const hasItemsInCart = cartItems.length > 0;
+  useEffect(() => {
+    const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartCount(storedCartItems.length);
+  }, []);
 
   return (
     <nav className="navbar">
@@ -30,10 +31,10 @@ export const Navbar = () => {
           <Link to="/contact" className="menu-link">
             Contact
           </Link>
-          {hasItemsInCart && (
+          {cartCount > 0 && (
             <Link to="/cart" className="menu-link">
               <FaShoppingCart />
-              <span className="cart-badge">{cartItems.length}</span>
+              <span className="cart-badge">{cartCount}</span>
             </Link>
           )}
         </ul>

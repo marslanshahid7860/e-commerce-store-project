@@ -29,7 +29,7 @@ export const ProductList = () => {
   const filteredData = [...myData.slice(0, 4), ...myData.slice(-4)];
 
   return (
-    <Container>
+    <Container className="product-list">
       <h3>New Products Deals</h3>
       <Row className="product-item">
         {filteredData.map((product) => (

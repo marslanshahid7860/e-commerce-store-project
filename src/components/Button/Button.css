@@ -1,5 +1,5 @@
 .btn {
-  padding: 12px 24px;
+  padding: 8px 16px;
   border-radius: 3px;
   background-color: #ffb700;
   text-transform: uppercase;
@@ -50,15 +50,16 @@
 }
 
 .btn.btn-custom {
-  background-color: transparent;
-  color: #333;
-  border: 1px solid #333;
-}
-
-.btn.btn-custom:hover {
+  
   border: 1px solid #333;
   color: #fff;
   background-color: #333;
+}
+
+.btn.btn-custom:hover {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #333;
 }
 
 /* Add more button styles as needed */
