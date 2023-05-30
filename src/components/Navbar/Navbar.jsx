@@ -1,43 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaTimes, FaBars } from "react-icons/fa";
 import "./Navbar.css";
 
 export const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cart")) || [];
     setCartCount(storedCartItems.length);
   }, []);
 
+  const closeMenu = () => {
+    setClick(false);
+  };
+
   return (
     <nav className="navbar">
       <Container>
-        <Link to="/" className="logo">
+        <NavLink exact to="/" className="navbar-logo">
           MyStore
-        </Link>
-        <ul className="navbar-nav">
-          <Link to="/" className="menu-link">
+        </NavLink>
+        <ul className={`navbar-menu ${click ? "active" : ""}`}>
+          <NavLink exact to="/" className="navbar-menu-link" onClick={closeMenu}>
             Home
-          </Link>
-          <Link to="/shop" className="menu-link">
+          </NavLink>
+          <NavLink to="/shop" className="navbar-menu-link" onClick={closeMenu}>
             Shop
-          </Link>
-          <Link to="/about" className="menu-link">
+          </NavLink>
+          <NavLink to="/about" className="navbar-menu-link" onClick={closeMenu}>
             About
-          </Link>
-          <Link to="/contact" className="menu-link">
+          </NavLink>
+          <NavLink to="/contact" className="navbar-menu-link" onClick={closeMenu}>
             Contact
-          </Link>
+          </NavLink>
           {cartCount > 0 && (
-            <Link to="/cart" className="menu-link">
+            <NavLink to="/cart" className="navbar-menu-link" onClick={closeMenu}>
               <FaShoppingCart />
-              <span className="cart-badge">{cartCount}</span>
-            </Link>
+              <span className="navbar-cart-badge">{cartCount}</span>
+            </NavLink>
           )}
         </ul>
+        <div className="hamburger" onClick={handleClick}>
+          {click ? <FaTimes /> : <FaBars />}
+        </div>
       </Container>
     </nav>
   );

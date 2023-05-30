@@ -2,12 +2,11 @@ import React from "react";
 import AboutSection from "../sections/About/AboutSection";
 
 function About() {
-  const title = "About Us";
-  const subtitle = "Our Purpose";
+  const title = "We Are Your Favourite, Online Store.";
 
   return (
     <div>
-      <AboutSection title={title} subtitle={subtitle} />
+      <AboutSection title={title} />
     </div>
   );
 }

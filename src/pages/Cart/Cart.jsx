@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import {Button} from "../../components/Button/Button"
+import { Button } from "../../components/Button/Button";
 import "./Cart.css";
 
 function Cart() {
@@ -38,7 +38,7 @@ function Cart() {
       (cartItem) => cartItem.product.id !== itemId
     );
     localStorage.setItem("cart", JSON.stringify(updatedCartItems));
-    navigate('/cart')
+    navigate("/cart");
     // const updatedQuantities = { ...quantities };
     // delete updatedQuantities[itemId];
     // setQuantities(updatedQuantities);
@@ -56,8 +56,8 @@ function Cart() {
   );
 
   if (!cartItems.length) {
-  var cart = "Cart is empty";
-}
+    var cart = "Cart is empty";
+  }
 
   return (
     <React.Fragment>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { getProducts } from "../Api";
 import { ProductCard } from "../components/ProductCard/ProductCard";
-import { Button } from "../components/Button/Button";
+import { Link } from "react-router-dom";
 import "./../App.css";
 
 function Shop() {
@@ -52,40 +52,42 @@ function Shop() {
         </Col>
       </Row>
       <Row className="category-buttons">
-        <Col md={6} className="d-flex justify-content-between pb-3 pt-3">
-          <Button
-            className={!selectedCategory ? "active" : "btn-custom"}
+        <Col md={4} className="d-flex justify-content-between pb-3 pt-3">
+          <Link
+            to="/shop"
+            className={!selectedCategory ? "active" : ""}
             onClick={() => handleCategorySelect(null)}
-            title={"All"}
-          />
-          <Button
-            className={
-              selectedCategory === "electronics" ? "active" : "btn-custom"
-            }
+          >
+            All
+          </Link>
+          <Link
+            to="/shop"
+            className={selectedCategory === "electronics" ? "active" : ""}
             onClick={() => handleCategorySelect("electronics")}
-            title={"Electronics"}
-          />
-          <Button
-            className={
-              selectedCategory === "men's clothing" ? "active" : "btn-custom"
-            }
+          >
+            Electronics
+          </Link>
+          <Link
+            to="/shop"
+            className={selectedCategory === "men's clothing" ? "active" : ""}
             onClick={() => handleCategorySelect("men's clothing")}
-            title={"Men"}
-          />
-          <Button
-            className={
-              selectedCategory === "women's clothing" ? "active" : "btn-custom"
-            }
+          >
+            Men
+          </Link>
+          <Link
+            to="/shop"
+            className={selectedCategory === "women's clothing" ? "active" : ""}
             onClick={() => handleCategorySelect("women's clothing")}
-            title={"Women"}
-          />
-          <Button
-            className={
-              selectedCategory === "jewelery" ? "active" : "btn-custom"
-            }
+          >
+            Women
+          </Link>
+          <Link
+            to="/shop"
+            className={selectedCategory === "jewelery" ? "active" : ""}
             onClick={() => handleCategorySelect("jewelery")}
-            title={"Jewelry"}
-          />
+          >
+            Jewelry
+          </Link>
         </Col>
       </Row>
 

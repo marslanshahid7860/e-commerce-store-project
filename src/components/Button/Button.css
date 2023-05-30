@@ -1,10 +1,10 @@
 .btn {
-  padding: 8px 16px;
+  padding: 8px 24px;
   border-radius: 3px;
-  background-color: #ffb700;
+  background-color: #ff5151;
   text-transform: uppercase;
   border: none;
-  color: #222;
+  color: #fff;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -12,8 +12,8 @@
 
 .btn:hover {
   background-color: transparent;
-  color: #222;
-  border: 1px solid #222;
+  color: #ff5151;
+  border: 1px solid #ff5151;
 }
 
 .btn.btn-light {
@@ -50,16 +50,15 @@
 }
 
 .btn.btn-custom {
-  
   border: 1px solid #333;
   color: #fff;
   background-color: #333;
 }
 
 .btn.btn-custom:hover {
-  background-color: transparent;
-  color: #333;
   border: 1px solid #333;
+  color: #333;
+  background-color: transparent;
 }
 
 /* Add more button styles as needed */

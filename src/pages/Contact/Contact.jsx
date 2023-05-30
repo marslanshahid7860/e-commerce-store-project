@@ -2,33 +2,56 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Button } from "../../components/Button/Button";
 import { FaHome, FaPhone } from "react-icons/fa";
-import {AiOutlineMail} from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 import "./Contact.css";
 
 function Contact() {
   return (
     <React.Fragment>
-      <div className="contact">
-        <div className="content-text">
+      <div className="contact-banner">
+        <div className="contact-banner-content">
           <h2>Contact Us</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
       </div>
-      <Container className="form-group">
+      <Container className="contact-form">
         <Row>
-          <h3 className="content-title">Get in Touch</h3>
-          <Col xl={8}>
+          <h3 className="contact-form-title">Get in Touch</h3>
+          <Col xl={6} className="contact-address">
+            <h2>Say Hello.</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            </p>
+            <ul className="address-list">
+              <li>
+                <FaHome />
+                212 7th St SE, Lahore, Pakistan
+              </li>
+              <li>
+                <AiOutlineMail />
+                info@example.com
+              </li>
+              <li>
+                <FaPhone />
+                123-456-7890/91
+              </li>
+            </ul>
+          </Col>
+          <Col xl={6}>
             <form action="" method="post">
-              <div className="input-wrapper">
-                <div className="name-email-wrapper">
+              <div className="input-group">
+                <div className="form-group">
                   <input
                     type="text"
                     id="fname"
                     name="firstname"
                     placeholder="Name"
                     autoComplete="off"
-                    autofocus
+                    autoFocus
                   />
+                </div>
+                <div className="form-group">
                   <input
                     type="email"
                     id="email"
@@ -37,44 +60,30 @@ function Contact() {
                     autoComplete="off"
                   />
                 </div>
-                <div className="subject-wrapper">
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="Subject"
-                  />
-                </div>
-                <div className="textarea">
-                  <textarea
-                    name="textarea"
-                    rows="8"
-                    cols="8"
-                    placeholder="Enter Message"
-                  />
-                </div>
-                <Button
-                  title={"Send"}
-                  className={"btn btn-custom"}
-                  type="button"
-                  name="button"
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Subject"
                 />
               </div>
+              <div className="form-group">
+                <textarea
+                  name="textarea"
+                  rows="8"
+                  cols="8"
+                  placeholder="Enter Message"
+                />
+              </div>
+              <Button
+                title={"Send"}
+                className={"btn"}
+                type="button"
+                name="button"
+              />
             </form>
-          </Col>
-          <Col xl={4} className="contact-address">
-            <div>
-              <FaHome />
-              <span>Excellence Delivered Lahore(Exd) - Lahore</span>
-            </div>
-            <div>
-              <FaPhone />
-              <span>+1 253 565 2365</span>
-            </div>
-            <div>
-              <AiOutlineMail />
-              <span>support@colorlib.com</span>
-            </div>
           </Col>
         </Row>
       </Container>

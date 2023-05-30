@@ -25,16 +25,16 @@ export const ProductList = () => {
     return <p>{error}</p>;
   }
 
-  // Filter the data to get the first four and last four items
-  const filteredData = [...myData.slice(0, 4), ...myData.slice(-4)];
+  // Filter the data to get the first four items
+  const filteredData = [...myData.slice(0, 4)];
 
   return (
-    <Container className="product-list">
-      <h3>New Products Deals</h3>
-      <Row className="product-item">
+    <Container className="product-list-container">
+      <h3 className="product-list-title">New Products Deals</h3>
+      <Row className="product-list-items">
         {filteredData.map((product) => (
-          <Col xl={3} lg={4} md={6} sm={6} xs={12} key={product.id}>
-            <div className="card-item">
+          <Col xl={3} lg={3} md={6} sm={6} xs={12} key={product.id}>
+            <div className="product-list-card">
               <ProductCard product={product} />
             </div>
           </Col>

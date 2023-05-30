@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-     text-transform: capitalize;
+    text-transform: capitalize;
 }
 .product-details .value{
     font-size: 16px;
@@ -34,7 +34,6 @@
 }
 .product-rating {
     margin:10px 0;
-    color: #ffb700;
     font-weight: 600;
     font-size: 16px;
 }
